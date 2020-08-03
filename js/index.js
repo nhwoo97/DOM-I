@@ -50,6 +50,25 @@ navBar[3].textContent='Features'
 navBar[4].textContent='About'
 navBar[5].textContent='Contact'
 
+//navBar adding
+const nav = document.querySelector('nav')
+
+const addNavBarLast = document.createElement('a')
+addNavBarLast.textContent = 'Cool Stuff!'
+addNavBarLast.style.color = 'green'
+addNavBarLast.href = '#'
+nav.appendChild(addNavBarLast)
+const addNavBarFirst = document.createElement('a')
+addNavBarFirst.textContent = 'Fun Games!'
+addNavBarFirst.style.color = 'green'
+addNavBarFirst.href = '#'
+nav.prepend(addNavBarFirst)
+
+//navBar color
+navBar.forEach(cb => {
+  cb.style.color = 'green';
+});
+
 //logo img
 const logoImg = document.querySelector('header img')
 logoImg.src = 'img/logo.png'
@@ -73,7 +92,7 @@ ctaButton.textContent = 'Get Started'
 
 //cta image
 const ctaImage = document.querySelector('.cta img')
-ctaImage.setAttribute('src', 'img/header-img.png')
+ctaImage.setAttribute('src', siteContent["cta"]["img-src"])
 
 //top content
 const toph4 = document.querySelector('.top-content .text-content h4')
@@ -102,7 +121,6 @@ contacth4.textContent = 'Contact'
 
 const contactParagraph = document.querySelectorAll('.contact p')
 
-console.log(contactParagraph)
 contactParagraph[0].textContent = '123 Way 456 Street Somewhere, USA'
 contactParagraph[1].textContent = '1 (888) 888-8888'
 contactParagraph[2].textContent = 'sales@greatidea.io'
