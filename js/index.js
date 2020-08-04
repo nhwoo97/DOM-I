@@ -86,9 +86,31 @@ ctaText.appendChild(ctaFirst)
 ctaText.appendChild(ctaSecond)
 ctaText.appendChild(ctaThird)
 
+//DOM IS AWESOME event listener
+ctaText.addEventListener("mouseenter", () => {
+  ctaText.style.transform = "scale(1.2)";
+  ctaText.style.transition = "all 0.3s";
+ })
+ ctaText.addEventListener("mouseleave", () => {
+   ctaText.style.transform = "scale(1)";
+ })
+ ctaText.addEventListener("click", () => {
+  ctaText.style.transition = "color 0.5s";
+  ctaText.style.color = "#e62739";
+})
+
 //cta button
 const ctaButton = document.querySelector('.cta-text button')
 ctaButton.textContent = 'Get Started'
+
+//cta button event listener
+ctaButton.addEventListener('click', () => {
+  let topExtra = document.querySelector('.top-content .text-content')
+  let gibberish = document.createElement('p')
+  gibberish.textContent = 'Hi this is random gibberish I am trying to squeeze in. This is actually a lot harder than it looks. I thought I could just make this repeat over and over again but it seems like there are some steps you need to take for this to work.'
+  let extraInfo = gibberish.cloneNode(true)
+  topExtra.appendChild(extraInfo)
+})
 
 //cta image
 const ctaImage = document.querySelector('.cta img')
